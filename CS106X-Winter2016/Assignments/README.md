@@ -4,9 +4,9 @@ In the README of the root directory of this repository I said this:
 
 > I will also put here the finished executable of each assignment (with some kind of a signature to prove that I made them) and it's accompanying resources so that I have proof that I really finished the assignments.
 
-I compiled these projects using Windows so you can be able to run these on Windows only.
+If you want to be able to run the executable, for "Week 2 - Generating Mazes" for example, just follow these steps:
 
-If you want to be able to run the executable, for "Week 2 - Generating Mazes" for example, just follow these steps.
+_(I compiled these projects using Windows so you can be able to run these on Windows only.)_
 
 1. Extract the zip file "`\Assignments\FilesForStandAlone-Windows.zip`"
 
@@ -20,8 +20,16 @@ The resulting set of files should be like in the image below:
 
 # Some hints and some difficulties I encountered while solving the assignments
 
+## Week 1
+
+I decided not to do the assignment for Week 1 because I already did something like this before when I solved ["Game of Life" or CS 106B last Spring 2011](http://jeremiahflaga.blogspot.com/2011/08/solution-for-game-of-life-stanfords.html).
+
 ## Week 2
 ### Word Ladders
+
+(July 25, 2016)
+
+![](Week2/word-ladder-by-jboy-flaga.png?raw=true)
 
 #### Hints: 
 
@@ -31,7 +39,7 @@ As stated in the handout, I used a `Queue<Vector<string> >`, or to make it more 
 
 ``` C++
 typedef Vector<string> WordLadder;
-
+...
 Queue<WordLadder> queueOfWordLadders;
 ```
 
@@ -39,15 +47,16 @@ Queue<WordLadder> queueOfWordLadders;
 
 No difficulties encountered.
 
-Lines of code of my solution: about 120 lines (including the newlines)
-
-
 ### Generating Mazes
+
+(August 8, 2016)
+
+![](Week2/maze-generator-by-jboy-flaga.png?raw=true)
 
 #### Hints:
 
 For list of chambers I used this:
-```
+``` C++
 typedef Set<cell> Chamber;
 ...
 Vector<Chamber> chambers;
@@ -62,7 +71,7 @@ Vector<Chamber> chambers;
 
 1. The use of randomInteger from the "random.h" library - take note that the parameters (low, high) are INCLUSIVE. I experienced runtime error because of index out of bounds.
 
-2. Another difficulty I encountered is in updating the list of chambers after removing the wall. After removing the wall, I needed to remove the two chambers that **was** separated by the wall. And because I was using a `<Vector>` to contain the list of `Chambers`, when I tried to remove the first chamber, the indices of the `<Vector>` already changed. When I tried to remove the second chamber, the one removed _by the code I have written_ is not the one I intended to remove. The reson was because the indices already changed.
+2. Another difficulty I encountered is in updating the list of chambers after removing the wall. After removing the wall, I needed to remove the two chambers that **was** separated by the wall. And because I was using a `<Vector>` to contain the list of `Chambers`, when I tried to remove the first chamber, the indices of the `<Vector>` already changed. When I tried to remove the second chamber, the one removed _by the code I have written_ is not the one I intended to remove. The reason is because the indices already changed.
 
 
 ------------------------------
